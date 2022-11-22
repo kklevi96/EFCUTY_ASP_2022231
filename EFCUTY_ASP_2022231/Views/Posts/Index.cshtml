@@ -1,0 +1,48 @@
+﻿@using EFCUTY_ASP_2022231.ViewModels
+@model PostsViewModel
+
+<p>
+    <a href="@Url.Action("Create", "Posts", new { subjectCode = Model.SubjectCode})">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Content
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Subject
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Posts) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.SubjectCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
