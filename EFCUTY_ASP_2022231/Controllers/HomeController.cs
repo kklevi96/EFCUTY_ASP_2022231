@@ -15,7 +15,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Subjects");
         }
 
         public IActionResult Privacy()
