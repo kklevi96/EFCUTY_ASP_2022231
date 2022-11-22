@@ -13,6 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     .UseSqlServer(connectionString)
     .UseLazyLoadingProxies());
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddTransient<ISubjectsRepository, SubjectsRepository>();
+builder.Services.AddTransient<IPostsRepository, PostsRepository>();
+builder.Services.AddTransient<ICommentsRepository, CommentsRepository>();
 
 builder.Services.AddDefaultIdentity<SiteUser>(options =>
 {
