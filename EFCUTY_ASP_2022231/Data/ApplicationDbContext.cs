@@ -21,7 +21,7 @@ namespace EFCUTY_ASP_2022231.Data
         {
             builder.Entity<Comment>()
                 .HasOne(t => t.Post)
-                .WithMany()
+                .WithMany(t => t.Comments)
                 .HasForeignKey(t => t.PostId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -33,7 +33,7 @@ namespace EFCUTY_ASP_2022231.Data
 
             builder.Entity<Post>()
                 .HasOne(t => t.Subject)
-                .WithMany()
+                .WithMany(t => t.Posts)
                 .HasForeignKey(t => t.SubjectCode)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -44,6 +44,18 @@ namespace EFCUTY_ASP_2022231.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
+
+            Subject s1 = new()
+            {
+                Name = "Analízis 1",
+                CreditValue = 7,
+                ExamSubject = true,
+                Semester = 1,
+                SubjectCode = "NIXMN1HBNE"
+            };
+
+            builder.Entity<Subject>().HasData(s1);
+
         }
     }
 }
