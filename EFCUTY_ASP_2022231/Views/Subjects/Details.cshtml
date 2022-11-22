@@ -1,0 +1,57 @@
+﻿@model EFCUTY_ASP_2022231.Models.Subject
+
+<div>
+    <h4>Subject</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreditValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreditValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExamSubject)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExamSubject)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SubjectCode">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<table border="0">
+    @{
+        foreach (var Post in Model.Posts)
+        {
+            <tr>
+                <th>
+                    @Post.Author.FirstName @Post.Author.LastName
+                </th>
+                <th>
+                    @Post.Timestamp
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Post.Content
+                </th>
+            </tr>
+        }
+    }
+</table>
