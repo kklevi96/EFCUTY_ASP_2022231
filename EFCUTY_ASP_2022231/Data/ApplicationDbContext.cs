@@ -185,7 +185,7 @@ namespace EFCUTY_ASP_2022231.Data
             };
 
 
-            builder.Entity<Post>().HasData(p1, p2, p3, p4);
+            builder.Entity<Post>().HasData(p1, p2, p3, p4, p5);
 
             Comment c1 = new()
             {
