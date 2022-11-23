@@ -93,7 +93,7 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "Juliska99")
             };
 
-            builder.Entity<SiteUser>().HasData(u1, u2, u3, u4);
+            builder.Entity<SiteUser>().HasData(u1, u2, u3, u4, u5);
 
             Subject s1 = new()
             {
@@ -140,7 +140,7 @@ namespace EFCUTY_ASP_2022231.Data
                 SubjectCode = "KGK666BUKO"
             };
 
-            builder.Entity<Subject>().HasData(s1, s2, s3, s4);
+            builder.Entity<Subject>().HasData(s1, s2, s3, s4, s5);
 
 
             Post p1 = new()

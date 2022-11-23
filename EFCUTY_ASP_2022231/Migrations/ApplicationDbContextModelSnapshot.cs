@@ -59,47 +59,47 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bfb370a3-263a-4127-971d-706541e01b02",
+                            Id = "18b30ece-1502-43da-864e-c993a1166ec2",
                             Content = "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!",
                             EditCount = 0,
-                            PostId = "a9022b00-d683-46fb-858f-383b2e1c93c6",
-                            SiteUserId = "0ec37df0-916d-464d-a8f6-9d3c0dc97848",
+                            PostId = "91cb1654-11bd-493e-b82e-29025adc0b57",
+                            SiteUserId = "decac9aa-4825-4402-afa1-48f27eca229d",
                             Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "c35b13b8-c415-44af-a6fd-9dc49dc309df",
+                            Id = "bd3fe53f-bdc1-4df3-97dc-3096b0b5e24c",
                             Content = "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.",
                             EditCount = 0,
-                            PostId = "497b04f7-3b5e-417b-9080-ed0a8adc729a",
-                            SiteUserId = "8b7de85f-3ef6-48d6-9fb8-ae666ed39c43",
+                            PostId = "36adf72a-c101-457a-950a-26d5c35a3c17",
+                            SiteUserId = "c82ae890-4be0-4cfa-968f-4eb5dd7ba072",
                             Timestamp = new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "5654c02e-715b-40e1-acfd-41331797b6a7",
+                            Id = "e0086432-30d8-45c8-8142-6322fa3ee021",
                             Content = "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D",
                             EditCount = 0,
-                            PostId = "7bc16cac-943e-4b54-b161-9f5ff3ce5d26",
-                            SiteUserId = "5d16e2fc-89c7-42d2-8628-1b19b19650ae",
+                            PostId = "d6ceed0a-784a-4193-8477-07c909b4c2a7",
+                            SiteUserId = "d75d60e5-dbbe-4a3c-87fb-0733244f0999",
                             Timestamp = new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "8e8e006c-8206-4c30-9885-8deac3f52be4",
+                            Id = "f0841cab-0ae2-4243-8f1f-7041e000c879",
                             Content = "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^",
                             EditCount = 0,
-                            PostId = "7bc16cac-943e-4b54-b161-9f5ff3ce5d26",
-                            SiteUserId = "ef2c07be-a9fb-4548-ba12-e2201018a7de",
+                            PostId = "d6ceed0a-784a-4193-8477-07c909b4c2a7",
+                            SiteUserId = "2f399ff3-2cc5-47e6-9ab2-4424303c6e61",
                             Timestamp = new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "4411667d-a822-4d61-986e-b36700c6bae3",
+                            Id = "ff231f6b-7e3d-407c-a4bb-389ad83d89d9",
                             Content = "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...",
                             EditCount = 0,
-                            PostId = "7bc16cac-943e-4b54-b161-9f5ff3ce5d26",
-                            SiteUserId = "5d16e2fc-89c7-42d2-8628-1b19b19650ae",
+                            PostId = "d6ceed0a-784a-4193-8477-07c909b4c2a7",
+                            SiteUserId = "d75d60e5-dbbe-4a3c-87fb-0733244f0999",
                             Timestamp = new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -141,46 +141,46 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a9022b00-d683-46fb-858f-383b2e1c93c6",
+                            Id = "91cb1654-11bd-493e-b82e-29025adc0b57",
                             Content = "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?",
                             EditCount = 0,
-                            SiteUserId = "8b7de85f-3ef6-48d6-9fb8-ae666ed39c43",
+                            SiteUserId = "c82ae890-4be0-4cfa-968f-4eb5dd7ba072",
                             SubjectCode = "KGK666BUKO",
                             Timestamp = new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "497b04f7-3b5e-417b-9080-ed0a8adc729a",
+                            Id = "36adf72a-c101-457a-950a-26d5c35a3c17",
                             Content = "Hányat lehet hiányozni sztf laboron?",
                             EditCount = 0,
-                            SiteUserId = "4799780d-a03f-471a-9622-c4866dd0f5bc",
+                            SiteUserId = "6201c807-a2a5-4318-952e-00d3c555623c",
                             SubjectCode = "NIXMN1HBNE",
                             Timestamp = new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "7bc16cac-943e-4b54-b161-9f5ff3ce5d26",
+                            Id = "d6ceed0a-784a-4193-8477-07c909b4c2a7",
                             Content = "Határérték-számításban tud valaki segíteni?",
                             EditCount = 0,
-                            SiteUserId = "ef2c07be-a9fb-4548-ba12-e2201018a7de",
+                            SiteUserId = "2f399ff3-2cc5-47e6-9ab2-4424303c6e61",
                             SubjectCode = "NIXMN1HBNE",
                             Timestamp = new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "905e51c3-9c04-40e9-97de-9cd0186ab687",
+                            Id = "ab15b1d7-980f-49b3-ac49-40d61db687f7",
                             Content = "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.",
                             EditCount = 0,
-                            SiteUserId = "0ec37df0-916d-464d-a8f6-9d3c0dc97848",
+                            SiteUserId = "decac9aa-4825-4402-afa1-48f27eca229d",
                             SubjectCode = "KGK666BUKO",
                             Timestamp = new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "58170dd4-a18e-4d39-9d29-94482c9a0121",
+                            Id = "91359b75-e355-4127-b7de-f2c1561874e0",
                             Content = "Jövő héten lesz óra?",
                             EditCount = 0,
-                            SiteUserId = "5d16e2fc-89c7-42d2-8628-1b19b19650ae",
+                            SiteUserId = "d75d60e5-dbbe-4a3c-87fb-0733244f0999",
                             SubjectCode = "NIXBE1PBNE",
                             Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         });
@@ -241,6 +241,14 @@ namespace EFCUTY_ASP_2022231.Migrations
                             ExamSubject = true,
                             Name = "Beágyazott és érzékelőalapú rendszerek",
                             Semester = 2
+                        },
+                        new
+                        {
+                            SubjectCode = "KGK666BUKO",
+                            CreditValue = 15,
+                            ExamSubject = false,
+                            Name = "Mikro- és makroökonómia",
+                            Semester = 1
                         });
                 });
 
@@ -483,15 +491,15 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8b7de85f-3ef6-48d6-9fb8-ae666ed39c43",
+                            Id = "c82ae890-4be0-4cfa-968f-4eb5dd7ba072",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b352f0c6-e8da-4714-99ab-ce5cbab1e712",
+                            ConcurrencyStamp = "94f24e22-e345-4206-8ade-f9de83806eb9",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "BELA.KOVACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJb5/6HEI0B27RtTwH8YFufe9Ei7+a1PV6iQLEvDVbPbEhlgT2euPovpFEb1iKsriA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP1FXYxKZGhoSO0VkMA0wtKPyt4ROe2JB3ZO3croXJHt8X15IFiNdDNYNhR1g4RSQg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "185f322d-c1e4-4b15-9253-c42aad776f7f",
+                            SecurityStamp = "3feebf1d-86d5-4fdb-8335-5cac82d06ecc",
                             TwoFactorEnabled = false,
                             UserName = "bela.kovacs@gmail.com",
                             FirstName = "Béla",
@@ -499,15 +507,15 @@ namespace EFCUTY_ASP_2022231.Migrations
                         },
                         new
                         {
-                            Id = "4799780d-a03f-471a-9622-c4866dd0f5bc",
+                            Id = "6201c807-a2a5-4318-952e-00d3c555623c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "95b819fd-981f-445f-85af-39363040829b",
+                            ConcurrencyStamp = "b75e87cf-4042-4b9d-a559-7b6735bd8f89",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "JOZSEFKISS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPqXDGfAsCS0zKfpnWyM7vHnCy+ULujmN+BfhVh5p6sd/UapluEEwfMIYgL9Io76fg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI69Wo5EAbipitW8nVUarocvxdjXHeMxO0fuvaKz7Yvv4Fypl7n4y9zuxBO8iQ+tjg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "046df45d-a7f4-4c28-9e9c-926f9d9bb2a5",
+                            SecurityStamp = "bf0c0488-0954-468f-9ca9-3ba122a65e4f",
                             TwoFactorEnabled = false,
                             UserName = "jozsefkiss@gmail.com",
                             FirstName = "József",
@@ -515,15 +523,15 @@ namespace EFCUTY_ASP_2022231.Migrations
                         },
                         new
                         {
-                            Id = "ef2c07be-a9fb-4548-ba12-e2201018a7de",
+                            Id = "2f399ff3-2cc5-47e6-9ab2-4424303c6e61",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "350de7c8-d57d-4fe6-848a-cd1b8c96b67d",
+                            ConcurrencyStamp = "0e4b5df0-1277-4275-8c7a-826bed8505d9",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ISTVANTAKACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIICwlR503dpnnQy6C6FJGoPkqHSXdcBKP0h40Ruami/hf6x4KMSffb7jgSXz+NwEw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGUaaUEScAKJbA3mf0Wb2pMDuaYTbqT92iRftkkcT7Da8QQKNt+w7BVRbqd36QABmg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4905909c-e9ca-4378-96e4-63ece924db61",
+                            SecurityStamp = "fb03a9b0-7793-482e-aa01-d125378d6e81",
                             TwoFactorEnabled = false,
                             UserName = "istvantakacs@gmail.com",
                             FirstName = "Ferenc",
@@ -531,19 +539,35 @@ namespace EFCUTY_ASP_2022231.Migrations
                         },
                         new
                         {
-                            Id = "0ec37df0-916d-464d-a8f6-9d3c0dc97848",
+                            Id = "decac9aa-4825-4402-afa1-48f27eca229d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9bc36164-ac9b-4da4-84aa-6c1024050220",
+                            ConcurrencyStamp = "de288495-a20c-4200-b507-96b26f65140f",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "MARIANNKISS@UNI-OBUDA.HU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOiVy1bKH3/jkDFGmWAz/G0QtcBahTyFJtyrS5miBp24gKB48De6etWWt//hSkkZhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHcKffQw1iiw90aw/lW4/MvykXXm/RwdP2KKPG7vsFEozQI5KdVPLmnwCq09IVifRQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "77b0e49b-76d0-417a-9e73-cfb2fe21a444",
+                            SecurityStamp = "e41aec94-c612-4a96-9eb5-bace5644149e",
                             TwoFactorEnabled = false,
                             UserName = "mariannkiss@uni-obuda.hu",
                             FirstName = "Mariann",
                             LastName = "Kiss"
+                        },
+                        new
+                        {
+                            Id = "d75d60e5-dbbe-4a3c-87fb-0733244f0999",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "57a99cd6-be90-426e-9746-5844f2e2a23d",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "JULIAHORVATH@YAHOO.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBEZOB5MIxBOjJWKy2BjoKGk3B0g0nCZZhNDxpnkr+qKkYebPFQdgn/cGhg08YSZ8Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "25a2f015-ed92-4bd6-b7af-c793b8bf6d36",
+                            TwoFactorEnabled = false,
+                            UserName = "juliahorvath@yahoo.com",
+                            FirstName = "Júlia",
+                            LastName = "Horváth"
                         });
                 });
 
