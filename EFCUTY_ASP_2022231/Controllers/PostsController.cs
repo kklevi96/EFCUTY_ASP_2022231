@@ -27,6 +27,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Posts
+        [Authorize]
         public IActionResult Index(string subjectCode)
         {
             var vm = new PostsViewModel()
@@ -41,6 +42,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Posts/Details/5
+        [Authorize]
         public IActionResult Details(string id)
         {
             var post = this.repository.GetOne(id);
@@ -134,6 +136,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Posts/Delete/5
+        [Authorize]
         public IActionResult Delete(string id)
         {
             var post = this.repository.GetOne(id);

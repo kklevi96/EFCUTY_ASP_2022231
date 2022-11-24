@@ -28,12 +28,14 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Subjects
+        [Authorize]
         public IActionResult Index()
         {
               return View(this.repository.GetAll().OrderBy(s=>s.Semester));
         }
 
         // GET: Subjects/Details/5
+        [Authorize]
         public IActionResult Details(string id)
         {
             var subject = this.repository.GetOne(id);
@@ -47,6 +49,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Subjects/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -76,6 +79,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Subjects/Edit/5
+        [Authorize]
         public IActionResult Edit(string id)
         {
             var subject = this.repository.GetOne(id);

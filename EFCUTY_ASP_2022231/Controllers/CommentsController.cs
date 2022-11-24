@@ -28,6 +28,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Comments
+        [Authorize]
         public IActionResult Index(string postId)
         {
             var vm = new CommentsViewModel()
@@ -125,6 +126,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Comments/Delete/5
+        [Authorize]
         public IActionResult Delete(string id)
         {
             var comment = this.repository.GetOne(id);
