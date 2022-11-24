@@ -141,7 +141,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         {
             var post = this.repository.GetOne(id);
 
-            if (post != null && (userManager.GetUserId(User) != post.SiteUserId) || User.IsInRole("Admin"))
+            if (post != null && (userManager.GetUserId(User) == post.SiteUserId) || User.IsInRole("Admin"))
             {
                 this.repository.Delete(post);
             }
