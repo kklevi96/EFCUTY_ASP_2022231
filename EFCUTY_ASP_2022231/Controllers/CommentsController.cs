@@ -103,9 +103,9 @@ namespace EFCUTY_ASP_2022231.Controllers
         [Authorize]
         public IActionResult Edit(string id, Comment comment)
         {
-            if (ModelState.IsValid)
+            if (comment.Content!=null)
             {
-                if (userManager.GetUserId(User) != comment.SiteUserId || !User.IsInRole("Admin"))
+                if (!User.IsInRole("Admin"))
                 {
                     return RedirectToAction(nameof(Index), new
                     {
@@ -115,6 +115,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
                 var old = this.repository.GetOne(id);
                 old.Content = comment.Content;
+                this.repository.Update(old);
 
 
                 return RedirectToAction(nameof(Index), new

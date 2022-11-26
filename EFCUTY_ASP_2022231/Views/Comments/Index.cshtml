@@ -1,8 +1,11 @@
 ﻿@using EFCUTY_ASP_2022231.ViewModels
 @model CommentsViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<SiteUser> SignInManager
+@inject UserManager<SiteUser> UserManager
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="@Url.Action("Create", "Comments", new { postId = Model.PostId})">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -16,7 +19,12 @@
             <th>
                 Author
             </th>
-            <th></th>
+            @if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
+                    {
+            <th>
+                Actions
+            </th>
+                    }
         </tr>
     </thead>
     <tbody>
@@ -30,13 +38,19 @@
                     @Html.DisplayFor(modelItem => item.Timestamp)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Author.FirstName + " " + item.Author.LastName)
+                    @Html.DisplayFor(modelItem => item.Author.FirstName) @Html.DisplayFor(modelItem => item.Author.LastName)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+
+                @if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
+                    {
+                        <td>
+                    
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit | </a>
+                    
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    }
+                
             </tr>
         }
     </tbody>

@@ -1,4 +1,7 @@
 ﻿@model EFCUTY_ASP_2022231.Models.Post
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<SiteUser> SignInManager
+@inject UserManager<SiteUser> UserManager
 
 <div>
     <h4>Post</h4>
@@ -31,9 +34,15 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin") || UserManager.GetUserId(User) == Model.SiteUserId)
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit Post | </a>
+        <a asp-action="Delete" asp-route-id="@Model?.Id">Delete Post | </a>
+    }
+    <a href=@Url.Action("Index", "Posts", new {subjectCode = Model.SubjectCode})>Back to List </a>
 </div>
+
+<a href="@Url.Action("Create","Comments")>New Comment</a> |
 
 <table border="0" >
 @{
@@ -50,6 +59,14 @@
             <tr>
                 <th>
                     @Comment.Content
+                    @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin") || UserManager.GetUserId(User) == Comment.SiteUserId)
+                    {
+                    <th>
+                        <a href="@Url.Action("Edit","Comments")/@Comment.Id">Edit</a> |
+                        <a href="@Url.Action("Delete","Comments")/@Comment.Id">Delete</a>
+
+                    </th>
+                    }
                 </th>
             </tr>
     }

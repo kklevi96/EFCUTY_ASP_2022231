@@ -11,6 +11,7 @@ using EFCUTY_ASP_2022231.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using EFCUTY_ASP_2022231.ViewModels;
+using Microsoft.Extensions.Hosting;
 
 namespace EFCUTY_ASP_2022231.Controllers
 {
@@ -99,7 +100,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         [Authorize]
         public IActionResult Edit(string id, Subject subject)
         {
-            if (ModelState.IsValid)
+            if (!String.IsNullOrEmpty(subject.Name))
             {
                 var old = this.repository.GetOne(id);
 

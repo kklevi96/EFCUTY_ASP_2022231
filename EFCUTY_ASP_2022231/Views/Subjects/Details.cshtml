@@ -1,4 +1,7 @@
 ﻿@model EFCUTY_ASP_2022231.Models.Subject
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<SiteUser> SignInManager
+@inject UserManager<SiteUser> UserManager
 
 <div>
     <h4>Subject</h4>
@@ -30,28 +33,43 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.SubjectCode">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+    @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
+    {
+        <div>
+             <a asp-action="Edit" asp-route-id="@Model.SubjectCode">Edit</a> |  
+             <a asp-action="Delete" asp-route-id="@Model.SubjectCode">Delete</a>
+        </div>
+    }
+         <a asp-action="Index">Back to List</a> |
+    <a href="@Url.Action("Create","Posts", new {subjectCode = Model.SubjectCode})">New Post</a>
+
+    </div>
 
 <table border="0">
     @{
         foreach (var Post in Model.Posts)
         {
-            <tr>
-                <th>
-                    @Post.Author.FirstName @Post.Author.LastName
-                </th>
-                <th>
-                    @Post.Timestamp
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    @Post.Content
-                </th>
-            </tr>
+                <tr>
+                    <th>
+                        @Post.Author.FirstName @Post.Author.LastName
+                    </th>
+                    <th>
+                        @Post.Timestamp
+                    </th>
+                    @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin") || UserManager.GetUserId(User) == Post.SiteUserId){
+                        <th>
+                        <a href="@Url.Action("Edit","Posts")/@Post.Id">Edit</a> | 
+                        <a href="@Url.Action("Delete","Posts")/@Post.Id">Delete</a>
+
+                        </th>
+                }
+                </tr>
+                <tr>
+                    <th>
+                        @Post.Content
+                    </th>
+                </tr>
         }
     }
 </table>

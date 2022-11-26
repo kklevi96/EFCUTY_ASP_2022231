@@ -112,9 +112,9 @@ namespace EFCUTY_ASP_2022231.Controllers
         public IActionResult Edit(string id, Post post)
         {
 
-            if (ModelState.IsValid)
+            if (post.Content!=null)
             {
-                if (userManager.GetUserId(User) != post.SiteUserId || !User.IsInRole("Admin"))
+                if (!User.IsInRole("Admin"))
                 {
                     return RedirectToAction(nameof(Index), new
                     {
@@ -124,6 +124,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
                 var old = this.repository.GetOne(id);
                 old.Content = post.Content;
+                this.repository.Update(old);
 
 
                 return RedirectToAction(nameof(Index), new

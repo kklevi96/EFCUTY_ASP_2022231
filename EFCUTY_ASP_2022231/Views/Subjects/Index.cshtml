@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<EFCUTY_ASP_2022231.Models.Subject>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<SiteUser> SignInManager
+@inject UserManager<SiteUser> UserManager
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -37,10 +40,13 @@
                 @Html.DisplayFor(modelItem => item.Semester)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.SubjectCode">Edit</a> |
-                <a href="./Posts?subjectCode=@item.SubjectCode"> Details</a> |
-                <a asp-action="Details" asp-route-id="@item.SubjectCode"> Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SubjectCode">Delete</a>
+                    @if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
+                    {
+                            <a asp-action="Edit" asp-route-id="@item.SubjectCode">Edit |</a> 
+                        <a asp-action="Delete" asp-route-id="@item.SubjectCode">Delete |</a>
+                    }
+                <a asp-action="Details" asp-route-id="@item.SubjectCode">View subject details and posts</a> | 
+                    <a href="@Url.Action("Index","Posts",new{subjectCode = item.SubjectCode})">View and manage posts under subject</a>
             </td>
         </tr>
 }
