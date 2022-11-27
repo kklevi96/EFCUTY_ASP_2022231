@@ -23,15 +23,11 @@ h1{
     font-weight: bolder;
 }
 
-.main-container {
-    background-color: white;
-    height: 100%;
-    min-height: 100;
-}
+
 /* ########################################### */
 /*           Forums.html                       */
 /* ########################################### */
-.container {
+.container{
     margin: 20px;
     padding: 20px;
 }
@@ -272,7 +268,15 @@ header{
     font-size:20px;
     font-weight:bold;
 }
+/* Footer Styling */
 
+footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color:  #52057b;
+    display: block;
+    text-align: center;
+}
 
 /* ########################################### */
 /*            posts.html                       */
@@ -315,7 +319,7 @@ header{
 .table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
     padding: 5px;
     margin: 2px;
-    background-color: #FF0042;
+    background-color: #131415;
 }
 
 .table-row .status{
@@ -371,6 +375,7 @@ header{
 }
 
 .note{
+    background-color:#111314;
     padding: 20px;
     display: block;
 }
@@ -387,6 +392,7 @@ header{
 
 .head{
     display: flex;
+    background-color: #2C2C2C;
     padding: 5px;
     font-weight: bold;
     font-size: 15px;
@@ -405,6 +411,24 @@ header{
     background-color: #131415;
     padding: 10px;
     margin-top: 5px;
+}
+
+.body .authors .username{
+    font-size: 20px;
+}
+
+.body .authors img{
+    max-width: 50px;
+    max-height: 80px;
+}
+
+.body .content .comment button{
+    border:none;
+    padding:10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px #fff;
+    cursor: pointer;
+    float: right;
 }
 
 /* comment section */
