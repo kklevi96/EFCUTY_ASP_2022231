@@ -63,7 +63,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         [Authorize]
         public IActionResult Create(Subject subject)
         {
-            if (ModelState.IsValid && User.IsInRole("Admin"))
+            if (!String.IsNullOrEmpty(subject.Name) && !String.IsNullOrEmpty(subject.SubjectCode) && User.IsInRole("Admin"))
             {
                 Subject n = new Subject()
                 {
@@ -133,5 +133,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }
