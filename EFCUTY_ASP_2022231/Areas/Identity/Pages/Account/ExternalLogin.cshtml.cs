@@ -85,6 +85,14 @@ namespace EFCUTY_ASP_2022231.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+
+            [Required]
+            [StringLength(100)]
+            public string FirstName { get; set; }
+
+            [Required]
+            [StringLength(100)]
+            public string LastName { get; set; }
         }
         
         public IActionResult OnGet() => RedirectToPage("./Login");
@@ -132,7 +140,9 @@ namespace EFCUTY_ASP_2022231.Areas.Identity.Pages.Account
                 {
                     Input = new InputModel
                     {
-                        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                        Email = info.Principal.FindFirstValue(ClaimTypes.Email),
+                        FirstName = info.Principal.FindFirstValue(ClaimTypes.GivenName),
+                        LastName = info.Principal.FindFirstValue(ClaimTypes.Surname)
                     };
                 }
                 return Page();
@@ -153,7 +163,8 @@ namespace EFCUTY_ASP_2022231.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
