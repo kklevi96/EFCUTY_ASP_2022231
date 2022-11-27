@@ -5,7 +5,7 @@
 @inject UserManager<SiteUser> UserManager
 
 <p>
-    <a href="@Url.Action("Create", "Comments", new { postId = Model.PostId})">Create New</a>
+    <a class="btn btn-primary" href="@Url.Action("Create", "Comments", new { postId = Model.PostId})">New comment</a>
 </p>
 <table class="table">
     <thead>
@@ -19,12 +19,9 @@
             <th>
                 Author
             </th>
-            @if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
-                    {
             <th>
-                Actions
+                Actions (if applicable)
             </th>
-                    }
         </tr>
     </thead>
     <tbody>
@@ -41,13 +38,13 @@
                     @Html.DisplayFor(modelItem => item.Author.FirstName) @Html.DisplayFor(modelItem => item.Author.LastName)
                 </td>
 
-                @if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
-                    {
+                @if (SignInManager.IsSignedIn(User) && (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin") || item.Author.Id == UserManager.GetUserId(User)))
+                {
                         <td>
-                    
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit | </a>
-                    
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                        <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a>
+
+                        <a asp-action="Delete" class="btn btn-secondary" asp-route-id="@item.Id">Delete</a>
                         </td>
                     }
                 

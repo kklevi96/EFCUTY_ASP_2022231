@@ -111,26 +111,28 @@ namespace EFCUTY_ASP_2022231.Controllers
         [Authorize]
         public IActionResult Edit(string id, Post post)
         {
+            var p = this.repository.GetOne(id);
 
-            if (post.Content!=null)
+            if (!String.IsNullOrEmpty(post.Content))
             {
-                if (!User.IsInRole("Admin"))
+                if ((userManager.GetUserId(User) == p.SiteUserId) || User.IsInRole("Admin"))
                 {
+
+                    var old = this.repository.GetOne(id);
+                    old.Content = post.Content;
+                    this.repository.Update(old);
+
+
                     return RedirectToAction(nameof(Index), new
                     {
-                        subjectCode = post.SubjectCode
+                        subjectCode = old.SubjectCode,
                     });
                 }
-
-                var old = this.repository.GetOne(id);
-                old.Content = post.Content;
-                this.repository.Update(old);
-
-
                 return RedirectToAction(nameof(Index), new
                 {
-                    subjectCode = old.SubjectCode,
+                    subjectCode = post.SubjectCode
                 });
+
             }
             return View(post);
 

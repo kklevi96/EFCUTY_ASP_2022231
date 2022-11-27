@@ -20,7 +20,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a href=@Url.Action("Index", "Comments", new {postId = Model.PostId})>Back to List </a>
 </div>
 
 @section Scripts {
