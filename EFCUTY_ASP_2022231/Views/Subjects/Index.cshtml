@@ -56,3 +56,8 @@
 }
     </tbody>
 </table>
+
+@if (SignInManager.IsSignedIn(User) && !(await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin")))
+{
+    <a class="btn btn-danger" href="@Url.Action("DelegateAdmin","Home")">Delegate myself to admin (for testing only!)</a>
+}
