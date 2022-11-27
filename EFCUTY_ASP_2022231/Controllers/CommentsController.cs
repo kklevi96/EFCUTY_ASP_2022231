@@ -117,7 +117,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
                     return RedirectToAction(nameof(Index), new
                     {
-                        subjectCode = old.PostId,
+                        postId = old.PostId,
                     });
                 }
                 return RedirectToAction(nameof(Index), new
