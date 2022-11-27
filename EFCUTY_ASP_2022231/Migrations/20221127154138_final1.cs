@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EFCUTY_ASP_2022231.Migrations
 {
-    public partial class init3 : Migration
+    public partial class final1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,8 +31,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContentType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Data = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -239,14 +237,14 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "ContentType", "Data", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "2f399ff3-2cc5-47e6-9ab2-4424303c6e61", 0, "0e4b5df0-1277-4275-8c7a-826bed8505d9", null, null, "SiteUser", null, false, "Ferenc", "Kovács", false, null, null, "ISTVANTAKACS@GMAIL.COM", "AQAAAAEAACcQAAAAEGUaaUEScAKJbA3mf0Wb2pMDuaYTbqT92iRftkkcT7Da8QQKNt+w7BVRbqd36QABmg==", null, false, "fb03a9b0-7793-482e-aa01-d125378d6e81", false, "istvantakacs@gmail.com" },
-                    { "6201c807-a2a5-4318-952e-00d3c555623c", 0, "b75e87cf-4042-4b9d-a559-7b6735bd8f89", null, null, "SiteUser", null, false, "József", "Kiss", false, null, null, "JOZSEFKISS@GMAIL.COM", "AQAAAAEAACcQAAAAEI69Wo5EAbipitW8nVUarocvxdjXHeMxO0fuvaKz7Yvv4Fypl7n4y9zuxBO8iQ+tjg==", null, false, "bf0c0488-0954-468f-9ca9-3ba122a65e4f", false, "jozsefkiss@gmail.com" },
-                    { "c82ae890-4be0-4cfa-968f-4eb5dd7ba072", 0, "94f24e22-e345-4206-8ade-f9de83806eb9", null, null, "SiteUser", null, false, "Béla", "Kovács", false, null, null, "BELA.KOVACS@GMAIL.COM", "AQAAAAEAACcQAAAAEP1FXYxKZGhoSO0VkMA0wtKPyt4ROe2JB3ZO3croXJHt8X15IFiNdDNYNhR1g4RSQg==", null, false, "3feebf1d-86d5-4fdb-8335-5cac82d06ecc", false, "bela.kovacs@gmail.com" },
-                    { "d75d60e5-dbbe-4a3c-87fb-0733244f0999", 0, "57a99cd6-be90-426e-9746-5844f2e2a23d", null, null, "SiteUser", null, false, "Júlia", "Horváth", false, null, null, "JULIAHORVATH@YAHOO.COM", "AQAAAAEAACcQAAAAEBEZOB5MIxBOjJWKy2BjoKGk3B0g0nCZZhNDxpnkr+qKkYebPFQdgn/cGhg08YSZ8Q==", null, false, "25a2f015-ed92-4bd6-b7af-c793b8bf6d36", false, "juliahorvath@yahoo.com" },
-                    { "decac9aa-4825-4402-afa1-48f27eca229d", 0, "de288495-a20c-4200-b507-96b26f65140f", null, null, "SiteUser", null, false, "Mariann", "Kiss", false, null, null, "MARIANNKISS@UNI-OBUDA.HU", "AQAAAAEAACcQAAAAEHcKffQw1iiw90aw/lW4/MvykXXm/RwdP2KKPG7vsFEozQI5KdVPLmnwCq09IVifRQ==", null, false, "e41aec94-c612-4a96-9eb5-bace5644149e", false, "mariannkiss@uni-obuda.hu" }
+                    { "51cef7a3-e765-48f6-bdce-c5fbee809bbc", 0, "e0a21c50-b0ad-4832-b627-bd08f62cd9a0", "SiteUser", null, false, "József", "Kiss", false, null, null, "JOZSEFKISS@GMAIL.COM", "AQAAAAEAACcQAAAAEPC4swraI2T+gxPc/MfSnGHVLW6NYYofhOxvvmo6ckpAEQ3faPsvATxpbZXOjcmeMQ==", null, false, "163d79bc-6b87-437c-b3ab-b8483596bba4", false, "jozsefkiss@gmail.com" },
+                    { "7a23fd68-0620-4753-a50d-81891f39cf0f", 0, "4ec8fdea-82de-4029-b45b-39a06211e4e5", "SiteUser", null, false, "Mariann", "Kiss", false, null, null, "MARIANNKISS@UNI-OBUDA.HU", "AQAAAAEAACcQAAAAEN3erYHmTeK7ak2GKZ/D3Z1jC2mY1zqA9pBmKk4Z76Ho7u4oMr1YQ8wY/KHtFkcIPQ==", null, false, "090fa46f-4e48-4ab5-93ca-278c4da8bff1", false, "mariannkiss@uni-obuda.hu" },
+                    { "7af33723-cc8a-4c91-8a5b-2f19530bf0fd", 0, "d7eebd00-17ed-4a97-b485-86ab81ccd96b", "SiteUser", null, false, "Béla", "Kovács", false, null, null, "BELA.KOVACS@GMAIL.COM", "AQAAAAEAACcQAAAAEP6PQpo+ALUJf3Hzc0cRYs7Ki6JalRa9a8l1wE89ix/LwSOLu5FjtaXanDjTsXJ7aA==", null, false, "1f81f5c2-6472-49ad-8320-47737140e872", false, "bela.kovacs@gmail.com" },
+                    { "7c35c9be-b060-404c-b9ad-aa4914fcdf80", 0, "63556cf8-0f92-43f1-8173-d78fd0129c62", "SiteUser", null, false, "Ferenc", "Kovács", false, null, null, "ISTVANTAKACS@GMAIL.COM", "AQAAAAEAACcQAAAAEPk877ggs1i+GRKwIpwFAbU3KMpRlJX8mfbLK863Yc4jV7+udaESqkGQeoYP+gRQ2A==", null, false, "60154dca-d04c-4d46-89fc-e8d6d5f316e3", false, "istvantakacs@gmail.com" },
+                    { "a280b392-10cd-4cfd-9dd5-777305c71183", 0, "27a22e23-3705-49de-a419-780bdddbdff8", "SiteUser", null, false, "Júlia", "Horváth", false, null, null, "JULIAHORVATH@YAHOO.COM", "AQAAAAEAACcQAAAAELUNBtYwKJv8cFvWGbzzmik+SdoaW5FJgzchrZfVli7diCtOgftlckQ6n2LiQhG67g==", null, false, "fd39bcec-de8c-4560-af90-cdb4673ce966", false, "juliahorvath@yahoo.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -266,11 +264,11 @@ namespace EFCUTY_ASP_2022231.Migrations
                 columns: new[] { "Id", "Content", "EditCount", "LastEdited", "SiteUserId", "SubjectCode", "Timestamp" },
                 values: new object[,]
                 {
-                    { "36adf72a-c101-457a-950a-26d5c35a3c17", "Hányat lehet hiányozni sztf laboron?", 0, null, "6201c807-a2a5-4318-952e-00d3c555623c", "NIXMN1HBNE", new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified) },
-                    { "91359b75-e355-4127-b7de-f2c1561874e0", "Jövő héten lesz óra?", 0, null, "d75d60e5-dbbe-4a3c-87fb-0733244f0999", "NIXBE1PBNE", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "91cb1654-11bd-493e-b82e-29025adc0b57", "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?", 0, null, "c82ae890-4be0-4cfa-968f-4eb5dd7ba072", "KGK666BUKO", new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "ab15b1d7-980f-49b3-ac49-40d61db687f7", "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.", 0, null, "decac9aa-4825-4402-afa1-48f27eca229d", "KGK666BUKO", new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "d6ceed0a-784a-4193-8477-07c909b4c2a7", "Határérték-számításban tud valaki segíteni?", 0, null, "2f399ff3-2cc5-47e6-9ab2-4424303c6e61", "NIXMN1HBNE", new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified) }
+                    { "32b811a2-a454-4daa-a9c4-e7744ef014e8", "Jövő héten lesz óra?", 0, null, "a280b392-10cd-4cfd-9dd5-777305c71183", "NIXBE1PBNE", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) },
+                    { "552378cf-6279-4afd-9b30-95812ab56c92", "Határérték-számításban tud valaki segíteni?", 0, null, "7c35c9be-b060-404c-b9ad-aa4914fcdf80", "NIXMN1HBNE", new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified) },
+                    { "7d98431a-6854-43d1-a6c9-fcd48e59d3bd", "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?", 0, null, "7af33723-cc8a-4c91-8a5b-2f19530bf0fd", "KGK666BUKO", new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified) },
+                    { "dcda1525-515a-4b0e-b95d-522f05d1d3f5", "Hányat lehet hiányozni sztf laboron?", 0, null, "51cef7a3-e765-48f6-bdce-c5fbee809bbc", "NIXMN1HBNE", new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified) },
+                    { "fd7395d8-607d-41ac-aaf2-58fd0c2ddb71", "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.", 0, null, "7a23fd68-0620-4753-a50d-81891f39cf0f", "KGK666BUKO", new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -278,11 +276,11 @@ namespace EFCUTY_ASP_2022231.Migrations
                 columns: new[] { "Id", "Content", "EditCount", "LastEdited", "PostId", "SiteUserId", "Timestamp" },
                 values: new object[,]
                 {
-                    { "18b30ece-1502-43da-864e-c993a1166ec2", "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!", 0, null, "91cb1654-11bd-493e-b82e-29025adc0b57", "decac9aa-4825-4402-afa1-48f27eca229d", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "bd3fe53f-bdc1-4df3-97dc-3096b0b5e24c", "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.", 0, null, "36adf72a-c101-457a-950a-26d5c35a3c17", "c82ae890-4be0-4cfa-968f-4eb5dd7ba072", new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified) },
-                    { "e0086432-30d8-45c8-8142-6322fa3ee021", "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D", 0, null, "d6ceed0a-784a-4193-8477-07c909b4c2a7", "d75d60e5-dbbe-4a3c-87fb-0733244f0999", new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "f0841cab-0ae2-4243-8f1f-7041e000c879", "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^", 0, null, "d6ceed0a-784a-4193-8477-07c909b4c2a7", "2f399ff3-2cc5-47e6-9ab2-4424303c6e61", new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "ff231f6b-7e3d-407c-a4bb-389ad83d89d9", "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...", 0, null, "d6ceed0a-784a-4193-8477-07c909b4c2a7", "d75d60e5-dbbe-4a3c-87fb-0733244f0999", new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified) }
+                    { "4b79d0f1-3d54-4533-b46c-e509da4b4505", "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D", 0, null, "552378cf-6279-4afd-9b30-95812ab56c92", "a280b392-10cd-4cfd-9dd5-777305c71183", new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified) },
+                    { "76b4bf9d-ad2b-477c-a597-ee29f3b2932b", "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...", 0, null, "552378cf-6279-4afd-9b30-95812ab56c92", "a280b392-10cd-4cfd-9dd5-777305c71183", new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified) },
+                    { "ac1976ff-f9df-485a-90cb-208ba26914b5", "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.", 0, null, "dcda1525-515a-4b0e-b95d-522f05d1d3f5", "7af33723-cc8a-4c91-8a5b-2f19530bf0fd", new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified) },
+                    { "e5edb05f-d8b8-4c3b-a393-153bc324dc21", "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!", 0, null, "7d98431a-6854-43d1-a6c9-fcd48e59d3bd", "7a23fd68-0620-4753-a50d-81891f39cf0f", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) },
+                    { "fb261b19-bfb6-4064-8a00-72bd010acf84", "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^", 0, null, "552378cf-6279-4afd-9b30-95812ab56c92", "7c35c9be-b060-404c-b9ad-aa4914fcdf80", new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
