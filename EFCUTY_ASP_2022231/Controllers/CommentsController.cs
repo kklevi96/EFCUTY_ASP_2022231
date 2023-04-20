@@ -12,18 +12,22 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Hosting;
 using EFCUTY_ASP_2022231.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using System.Xml.Linq;
 
 namespace EFCUTY_ASP_2022231.Controllers
 {
     public class CommentsController : Controller
     {
         private readonly ICommentsRepository repository;
+        private readonly IPostsRepository postsRepository;
+
         private readonly UserManager<SiteUser> userManager;
 
-        public CommentsController(ICommentsRepository repository, UserManager<SiteUser> userManager)
+        public CommentsController(ICommentsRepository repository, UserManager<SiteUser> userManager, IPostsRepository postsRepository)
         {
             this.repository = repository;
             this.userManager = userManager;
+            this.postsRepository = postsRepository;
         }
 
 
@@ -31,12 +35,11 @@ namespace EFCUTY_ASP_2022231.Controllers
         [Authorize]
         public IActionResult Index(string postId)
         {
-            var vm = new CommentsViewModel()
+            var vm = new CommentsViewModel(postsRepository.GetOne(postId))
             {
                 Comments = this.repository.GetAll()
                 .Where(c => c.PostId == postId)
-                .OrderBy(c => c.Timestamp),
-                PostId = postId
+                .OrderBy(c => c.Timestamp)
             };
             return View(vm);
 
