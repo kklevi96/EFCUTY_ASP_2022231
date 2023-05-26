@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EFCUTY_ASP_2022231.Models
 {
@@ -35,6 +36,7 @@ namespace EFCUTY_ASP_2022231.Models
         [ForeignKey(nameof(Subject))]
         public string SubjectCode { get; set; }
 
+        [JsonIgnore]
         [NotMapped]
         public virtual List<Comment> Comments { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EFCUTY_ASP_2022231.Models
 {
@@ -33,6 +34,7 @@ namespace EFCUTY_ASP_2022231.Models
 
         public int Semester { get; set; }
 
+        [JsonIgnore]
         [NotMapped]
         public virtual List<Post> Posts { get; set; }
     }

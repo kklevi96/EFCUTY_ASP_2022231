@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EFCUTY_ASP_2022231.Models
 {
@@ -20,7 +21,6 @@ namespace EFCUTY_ASP_2022231.Models
         public DateTime? LastEdited { get; set; }
 
         public int EditCount { get; set; }
-
 
         [NotMapped]
         public virtual Post Post { get; set; }
