@@ -17,7 +17,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 {
     public class SubjectsController : Controller
     {
-         private readonly ISubjectsRepository repository;
+        private readonly ISubjectsRepository repository;
         private readonly UserManager<SiteUser> userManager;
 
         public SubjectsController(ISubjectsRepository repository, UserManager<SiteUser> userManager)
