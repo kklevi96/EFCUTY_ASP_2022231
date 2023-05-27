@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCUTY_ASP_2022231.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApiUser>
     {
         public DbSet<Subject> Subjects { get; set; }
-        public DbSet<SiteUser> Users { get; set; }
+        //public DbSet<SiteUser> Users { get; set; }
+        public DbSet<ApiUser> Users { get; set; }
+
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
@@ -16,6 +18,7 @@ namespace EFCUTY_ASP_2022231.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -44,12 +47,15 @@ namespace EFCUTY_ASP_2022231.Data
                 .HasForeignKey(t => t.SiteUserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<IdentityRole>().HasData(new { Id = "1", Name = "Admin", NormalizedName = "ADMIN" });
+            builder.Entity<IdentityRole>().HasData(
+                new { Id = "1", Name = "Admin", NormalizedName = "ADMIN" }
+            );
 
-            var hasher = new PasswordHasher<SiteUser>();
+            var hasher = new PasswordHasher<ApiUser>();
 
-            SiteUser u1 = new()
+            ApiUser u1 = new()
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = "bela.kovacs@gmail.com",
                 NormalizedUserName = "BELA.KOVACS@GMAIL.COM",
                 FirstName = "Béla",
@@ -57,8 +63,9 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "Bela1234")
             };
 
-            SiteUser u2 = new()
+            ApiUser u2 = new()
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = "jozsefkiss@gmail.com",
                 NormalizedUserName = "JOZSEFKISS@GMAIL.COM",
                 FirstName = "József",
@@ -66,8 +73,9 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "Jozsi1234")
             };
 
-            SiteUser u3 = new()
+            ApiUser u3 = new()
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = "istvantakacs@gmail.com",
                 NormalizedUserName = "ISTVANTAKACS@GMAIL.COM",
                 FirstName = "Ferenc",
@@ -75,8 +83,9 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "Ferikee1234")
             };
 
-            SiteUser u4 = new()
+            ApiUser u4 = new()
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = "mariannkiss@uni-obuda.hu",
                 NormalizedUserName = "MARIANNKISS@UNI-OBUDA.HU",
                 FirstName = "Mariann",
@@ -84,8 +93,9 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "MikMak12")
             };
 
-            SiteUser u5 = new()
+            ApiUser u5 = new()
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = "juliahorvath@yahoo.com",
                 NormalizedUserName = "JULIAHORVATH@YAHOO.COM",
                 FirstName = "Júlia",
@@ -93,7 +103,7 @@ namespace EFCUTY_ASP_2022231.Data
                 PasswordHash = hasher.HashPassword(null, "Juliska99")
             };
 
-            builder.Entity<SiteUser>().HasData(u1, u2, u3, u4, u5);
+            builder.Entity<ApiUser>().HasData(u1, u2, u3, u4, u5);
 
             Subject s1 = new()
             {
