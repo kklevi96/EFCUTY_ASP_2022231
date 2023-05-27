@@ -12,9 +12,9 @@ namespace EFCUTY_ASP_2022231.Controllers
     public class PostsApiController : ControllerBase
     {
         private readonly IPostsRepository repository;
-        private readonly UserManager<SiteUser> userManager;
+        private readonly UserManager<ApiUser> userManager;
 
-        public PostsApiController(IPostsRepository repository, UserManager<SiteUser> userManager)
+        public PostsApiController(IPostsRepository repository, UserManager<ApiUser> userManager)
         {
             this.repository = repository;
             this.userManager = userManager;
@@ -22,22 +22,14 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Posts
-        [Authorize]
-        public IActionResult Index(string subjectCode)
+        public IActionResult Index()
         {
-            var vm = new PostsViewModel()
-            {
-                Posts = this.repository.GetAll()
-                .Where(p => p.SubjectCode == subjectCode)
-                .OrderBy(p => p.Timestamp),
-                SubjectCode = subjectCode
+            return Ok(this.repository.GetAll());
 
-            };
-            return Ok(vm);
         }
 
         // GET: Posts/Details/5
-        [Authorize]
+        [HttpGet("Details/{id}")]
         public IActionResult Details(string id)
         {
             var post = this.repository.GetOne(id);
@@ -48,7 +40,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         // POST: Posts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("Create")]
         public IActionResult Create(PostViewModel pvm)
         {
             if (userManager.GetUserId(User) == null)
@@ -74,7 +66,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         // POST: Posts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPut("Edit/{id}")]
         public IActionResult Edit(string id, Post post)
         {
             var p = this.repository.GetOne(id);
@@ -98,6 +90,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Posts/Delete/5
+        [HttpDelete("Delete")]
         public IActionResult Delete(string id)
         {
             var post = this.repository.GetOne(id);
