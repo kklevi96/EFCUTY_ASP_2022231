@@ -22,6 +22,8 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Posts
+        [HttpGet]
+
         public IActionResult Index()
         {
             return Ok(this.repository.GetAll());

@@ -19,6 +19,10 @@ builder.Services.AddTransient<ISubjectsRepository, SubjectsRepository>();
 builder.Services.AddTransient<IPostsRepository, PostsRepository>();
 builder.Services.AddTransient<ICommentsRepository, CommentsRepository>();
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 //builder.Services.AddDefaultIdentity<SiteUser>(options =>
 //{
 //    options.SignIn.RequireConfirmedAccount = false;
@@ -66,7 +70,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 else
 {
@@ -87,6 +92,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Subjects}/{action=Index}/{id?}");
-app.MapRazorPages();
 
 app.Run();
