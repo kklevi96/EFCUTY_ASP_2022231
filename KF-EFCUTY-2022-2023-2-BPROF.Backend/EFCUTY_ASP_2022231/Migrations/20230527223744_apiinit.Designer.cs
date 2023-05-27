@@ -4,6 +4,7 @@ using EFCUTY_ASP_2022231.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCUTY_ASP_2022231.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230527223744_apiinit")]
+    partial class apiinit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,81 +99,81 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
+                            Id = "c22192a2-5083-40a1-af8e-fb652a0914bd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "78c6aa8f-1a31-47de-a2f0-99fe8920c37c",
+                            ConcurrencyStamp = "59485fe1-96b5-4239-a673-05c3d8a963f8",
                             EmailConfirmed = false,
                             FirstName = "Béla",
                             LastName = "Kovács",
                             LockoutEnabled = false,
                             NormalizedUserName = "BELA.KOVACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBmPjBNlOoXb9YTdQW0+T3T0OfMNsqjXBo8PmCA9VvMr3yNkggr3CIKmemN/RtXlWg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFO6jAjt/hxwUQxW1q3RpsvTCq27f4x470ikuCg6xdeXxGaIVvoi5D1ECuZmn15U2Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fed5bbbf-b3fa-41b7-9476-3e7f4a0868ee",
+                            SecurityStamp = "0aace00b-b8d8-4983-9348-286e14dc5d89",
                             TwoFactorEnabled = false,
                             UserName = "bela.kovacs@gmail.com"
                         },
                         new
                         {
-                            Id = "35806983-b7c1-4704-b396-6f3510d13393",
+                            Id = "f90bda35-d092-4bb8-84cd-a611aeab470a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "daf02808-0240-4d9f-93c0-ce2507bcecf4",
+                            ConcurrencyStamp = "21e99639-a160-4065-9adf-4be9630f39b1",
                             EmailConfirmed = false,
                             FirstName = "József",
                             LastName = "Kiss",
                             LockoutEnabled = false,
                             NormalizedUserName = "JOZSEFKISS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBt6kogaA0iZm2CV8Qws1tmXyVF1Eog0URhx+icafMW05zcUTGkgn019aaUszcTAqw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPPqcEALuOKPBH0vbsxA9E+BAvzpq6jdUPy93tG5Urfa65vV2hDVmMH8esdG+QAB5A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "87f5eaf8-1154-42eb-bed9-76817ab0b00b",
+                            SecurityStamp = "98eed380-77a0-4425-871e-ea9f89a9dd07",
                             TwoFactorEnabled = false,
                             UserName = "jozsefkiss@gmail.com"
                         },
                         new
                         {
-                            Id = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
+                            Id = "5aa3e82c-3e7b-4cc4-804e-1ea6f8922f8b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3d3874fc-ea7c-40b4-927a-bbc4d557cd09",
+                            ConcurrencyStamp = "ec5c1f8d-392d-40d4-8663-5695c9ab1b78",
                             EmailConfirmed = false,
                             FirstName = "Ferenc",
                             LastName = "Kovács",
                             LockoutEnabled = false,
                             NormalizedUserName = "ISTVANTAKACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA49xa4aAA/uefo479T4B5+Q56gsfUoUMcMKHxlGXjjeeaOgUTjXFpRz2Iws/wfW/w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH09JHyfWPLnG7KHq3vX8oB2VlG+pZdfbFJJXtjY96RyDSwswPG3GcEAJcrurkH5WQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "723671f2-a00b-4356-83ae-4129c70dfc37",
+                            SecurityStamp = "c8696ec3-ca52-4627-b5db-ad2073dc6e99",
                             TwoFactorEnabled = false,
                             UserName = "istvantakacs@gmail.com"
                         },
                         new
                         {
-                            Id = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
+                            Id = "6656bbe9-66c7-4069-be44-a1e368d4669d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ec0cda04-9009-4165-bc5f-5cef88452a06",
+                            ConcurrencyStamp = "ab013e34-6d08-42e3-ae60-322b5a31f6a1",
                             EmailConfirmed = false,
                             FirstName = "Mariann",
                             LastName = "Kiss",
                             LockoutEnabled = false,
                             NormalizedUserName = "MARIANNKISS@UNI-OBUDA.HU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM67HF+ofUUwfqtR3RJ7s7I8xib7VvwL3Cxa2BI69JLDzy0QK1hGIhabCqhzQBYzTg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGluqJqm59iQwRkrH+pfQBvsmPbQhpjLnyDtdIdCKUpYq7ztNacc7MHvoApXOkjZjg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c254a00c-81a4-4e53-b057-672bce54ffe7",
+                            SecurityStamp = "77895e66-afeb-4c3a-aa01-d4973e14f93a",
                             TwoFactorEnabled = false,
                             UserName = "mariannkiss@uni-obuda.hu"
                         },
                         new
                         {
-                            Id = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
+                            Id = "921df54a-d1ba-47fc-af44-8ac65b786883",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f232d90c-6997-4b5a-8d59-e566ac9cc3cf",
+                            ConcurrencyStamp = "997b8879-1b87-434c-99b9-9d04272e578c",
                             EmailConfirmed = false,
                             FirstName = "Júlia",
                             LastName = "Horváth",
                             LockoutEnabled = false,
                             NormalizedUserName = "JULIAHORVATH@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPLUkQodL+dRzvAc/wrmk+2R6oS1K73wbUICYFtfCZSBojroDnnD88hEnPu0ZZdvvg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEELg7hzSs98j7cxzdr+3FtIbZKBwD+j7/gfagqz3yHOzwFpUQDc9TvR4EfEkArLT4A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e4534e0-31b0-44bd-b6dd-6a51fae94419",
+                            SecurityStamp = "fd37a41d-0f5e-40a4-b701-efa54340188d",
                             TwoFactorEnabled = false,
                             UserName = "juliahorvath@yahoo.com"
                         });
@@ -210,53 +212,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasIndex("SiteUserId");
 
                     b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "edd18bb6-6ef2-4638-a73f-806902266183",
-                            Content = "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!",
-                            EditCount = 0,
-                            PostId = "86749716-3490-4914-8bfb-7bb92e5f52c9",
-                            SiteUserId = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
-                            Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "b719a349-ac37-4e79-85a8-6c3854027b95",
-                            Content = "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.",
-                            EditCount = 0,
-                            PostId = "8f5b166d-43e7-4592-b365-b24b3b3220e2",
-                            SiteUserId = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
-                            Timestamp = new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "3f4d4861-3984-45f1-8f2c-f5ae78e954bc",
-                            Content = "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D",
-                            EditCount = 0,
-                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
-                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
-                            Timestamp = new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "fa5fec09-647f-4d56-9861-9334a5e3b461",
-                            Content = "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^",
-                            EditCount = 0,
-                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
-                            SiteUserId = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
-                            Timestamp = new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "bab7742d-3183-4934-9ee2-95c152f63b10",
-                            Content = "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...",
-                            EditCount = 0,
-                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
-                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
-                            Timestamp = new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("EFCUTY_ASP_2022231.Models.Post", b =>
@@ -292,53 +247,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasIndex("SubjectCode");
 
                     b.ToTable("Posts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "86749716-3490-4914-8bfb-7bb92e5f52c9",
-                            Content = "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?",
-                            EditCount = 0,
-                            SiteUserId = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
-                            SubjectCode = "KGK666BUKO",
-                            Timestamp = new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "8f5b166d-43e7-4592-b365-b24b3b3220e2",
-                            Content = "Hányat lehet hiányozni sztf laboron?",
-                            EditCount = 0,
-                            SiteUserId = "35806983-b7c1-4704-b396-6f3510d13393",
-                            SubjectCode = "NIXMN1HBNE",
-                            Timestamp = new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
-                            Content = "Határérték-számításban tud valaki segíteni?",
-                            EditCount = 0,
-                            SiteUserId = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
-                            SubjectCode = "NIXMN1HBNE",
-                            Timestamp = new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "d3dd4ab6-2a12-4212-9177-6b2d9e8ddede",
-                            Content = "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.",
-                            EditCount = 0,
-                            SiteUserId = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
-                            SubjectCode = "KGK666BUKO",
-                            Timestamp = new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = "782e6967-67cd-40de-82fc-e79d4a535dab",
-                            Content = "Jövő héten lesz óra?",
-                            EditCount = 0,
-                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
-                            SubjectCode = "NIXBE1PBNE",
-                            Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("EFCUTY_ASP_2022231.Models.Subject", b =>

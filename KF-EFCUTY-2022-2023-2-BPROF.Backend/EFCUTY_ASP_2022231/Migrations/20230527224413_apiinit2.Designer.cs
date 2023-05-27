@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCUTY_ASP_2022231.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221127155047_final2")]
-    partial class final2
+    [Migration("20230527224413_apiinit2")]
+    partial class apiinit2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,161 @@ namespace EFCUTY_ASP_2022231.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("EFCUTY_ASP_2022231.Models.ApiUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "78c6aa8f-1a31-47de-a2f0-99fe8920c37c",
+                            EmailConfirmed = false,
+                            FirstName = "Béla",
+                            LastName = "Kovács",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "BELA.KOVACS@GMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBmPjBNlOoXb9YTdQW0+T3T0OfMNsqjXBo8PmCA9VvMr3yNkggr3CIKmemN/RtXlWg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "fed5bbbf-b3fa-41b7-9476-3e7f4a0868ee",
+                            TwoFactorEnabled = false,
+                            UserName = "bela.kovacs@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "35806983-b7c1-4704-b396-6f3510d13393",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "daf02808-0240-4d9f-93c0-ce2507bcecf4",
+                            EmailConfirmed = false,
+                            FirstName = "József",
+                            LastName = "Kiss",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "JOZSEFKISS@GMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBt6kogaA0iZm2CV8Qws1tmXyVF1Eog0URhx+icafMW05zcUTGkgn019aaUszcTAqw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "87f5eaf8-1154-42eb-bed9-76817ab0b00b",
+                            TwoFactorEnabled = false,
+                            UserName = "jozsefkiss@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "3d3874fc-ea7c-40b4-927a-bbc4d557cd09",
+                            EmailConfirmed = false,
+                            FirstName = "Ferenc",
+                            LastName = "Kovács",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "ISTVANTAKACS@GMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA49xa4aAA/uefo479T4B5+Q56gsfUoUMcMKHxlGXjjeeaOgUTjXFpRz2Iws/wfW/w==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "723671f2-a00b-4356-83ae-4129c70dfc37",
+                            TwoFactorEnabled = false,
+                            UserName = "istvantakacs@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ec0cda04-9009-4165-bc5f-5cef88452a06",
+                            EmailConfirmed = false,
+                            FirstName = "Mariann",
+                            LastName = "Kiss",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "MARIANNKISS@UNI-OBUDA.HU",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM67HF+ofUUwfqtR3RJ7s7I8xib7VvwL3Cxa2BI69JLDzy0QK1hGIhabCqhzQBYzTg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c254a00c-81a4-4e53-b057-672bce54ffe7",
+                            TwoFactorEnabled = false,
+                            UserName = "mariannkiss@uni-obuda.hu"
+                        },
+                        new
+                        {
+                            Id = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f232d90c-6997-4b5a-8d59-e566ac9cc3cf",
+                            EmailConfirmed = false,
+                            FirstName = "Júlia",
+                            LastName = "Horváth",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "JULIAHORVATH@YAHOO.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPLUkQodL+dRzvAc/wrmk+2R6oS1K73wbUICYFtfCZSBojroDnnD88hEnPu0ZZdvvg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "8e4534e0-31b0-44bd-b6dd-6a51fae94419",
+                            TwoFactorEnabled = false,
+                            UserName = "juliahorvath@yahoo.com"
+                        });
+                });
 
             modelBuilder.Entity("EFCUTY_ASP_2022231.Models.Comment", b =>
                 {
@@ -61,47 +216,47 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ba6e3191-6817-4fcf-90ef-5d5045df9fc4",
+                            Id = "edd18bb6-6ef2-4638-a73f-806902266183",
                             Content = "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!",
                             EditCount = 0,
-                            PostId = "31ed54bb-1fa5-430c-a965-06b65b7164ed",
-                            SiteUserId = "4487b2cc-2e4a-4494-b8eb-8a448701e371",
+                            PostId = "86749716-3490-4914-8bfb-7bb92e5f52c9",
+                            SiteUserId = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
                             Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "50590d26-0a29-4910-b985-3a322d343368",
+                            Id = "b719a349-ac37-4e79-85a8-6c3854027b95",
                             Content = "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.",
                             EditCount = 0,
-                            PostId = "dc78bd1e-80ce-4e0e-a03b-f91327b62378",
-                            SiteUserId = "13dd7181-a74c-4baf-9574-85ab30a5f5e3",
+                            PostId = "8f5b166d-43e7-4592-b365-b24b3b3220e2",
+                            SiteUserId = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
                             Timestamp = new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "8b53c519-67f9-479e-881a-fae3704cbd60",
+                            Id = "3f4d4861-3984-45f1-8f2c-f5ae78e954bc",
                             Content = "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D",
                             EditCount = 0,
-                            PostId = "138c5159-e3e0-4f06-a118-81062f1f1f61",
-                            SiteUserId = "3cc3ef7f-bc8e-461c-8271-4ac357cddd64",
+                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
+                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
                             Timestamp = new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "5f777676-f965-4267-9460-672b76c0f215",
+                            Id = "fa5fec09-647f-4d56-9861-9334a5e3b461",
                             Content = "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^",
                             EditCount = 0,
-                            PostId = "138c5159-e3e0-4f06-a118-81062f1f1f61",
-                            SiteUserId = "88e6c8ee-bd0d-4a15-9b90-21514eccae4f",
+                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
+                            SiteUserId = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
                             Timestamp = new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "6e392491-71d4-418d-97cd-0c3f561ef5f3",
+                            Id = "bab7742d-3183-4934-9ee2-95c152f63b10",
                             Content = "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...",
                             EditCount = 0,
-                            PostId = "138c5159-e3e0-4f06-a118-81062f1f1f61",
-                            SiteUserId = "3cc3ef7f-bc8e-461c-8271-4ac357cddd64",
+                            PostId = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
+                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
                             Timestamp = new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -143,46 +298,46 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "31ed54bb-1fa5-430c-a965-06b65b7164ed",
+                            Id = "86749716-3490-4914-8bfb-7bb92e5f52c9",
                             Content = "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?",
                             EditCount = 0,
-                            SiteUserId = "13dd7181-a74c-4baf-9574-85ab30a5f5e3",
+                            SiteUserId = "dcc99930-fcf5-4730-be6c-fc0ad9d4a836",
                             SubjectCode = "KGK666BUKO",
                             Timestamp = new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "dc78bd1e-80ce-4e0e-a03b-f91327b62378",
+                            Id = "8f5b166d-43e7-4592-b365-b24b3b3220e2",
                             Content = "Hányat lehet hiányozni sztf laboron?",
                             EditCount = 0,
-                            SiteUserId = "cb2a61c1-3c9d-4b65-8f79-ccf91caa89a2",
+                            SiteUserId = "35806983-b7c1-4704-b396-6f3510d13393",
                             SubjectCode = "NIXMN1HBNE",
                             Timestamp = new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "138c5159-e3e0-4f06-a118-81062f1f1f61",
+                            Id = "b0dde3b8-70b5-4295-a18d-f0649e7407e9",
                             Content = "Határérték-számításban tud valaki segíteni?",
                             EditCount = 0,
-                            SiteUserId = "88e6c8ee-bd0d-4a15-9b90-21514eccae4f",
+                            SiteUserId = "0f04559c-ceb0-45c6-9b3b-35e9781b4bfd",
                             SubjectCode = "NIXMN1HBNE",
                             Timestamp = new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "98d55237-599d-43e9-b3dd-33423c9344fc",
+                            Id = "d3dd4ab6-2a12-4212-9177-6b2d9e8ddede",
                             Content = "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.",
                             EditCount = 0,
-                            SiteUserId = "4487b2cc-2e4a-4494-b8eb-8a448701e371",
+                            SiteUserId = "98f59a86-4808-4f0f-8b51-1fb8e55eb321",
                             SubjectCode = "KGK666BUKO",
                             Timestamp = new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "b59674e6-7b78-43ad-9c8e-7594be96410e",
+                            Id = "782e6967-67cd-40de-82fc-e79d4a535dab",
                             Content = "Jövő héten lesz óra?",
                             EditCount = 0,
-                            SiteUserId = "3cc3ef7f-bc8e-461c-8271-4ac357cddd64",
+                            SiteUserId = "a43ba7a2-896b-4fa7-b41d-6ecb4723b5d0",
                             SubjectCode = "NIXBE1PBNE",
                             Timestamp = new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified)
                         });
@@ -314,77 +469,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -413,12 +497,10 @@ namespace EFCUTY_ASP_2022231.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -455,12 +537,10 @@ namespace EFCUTY_ASP_2022231.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -468,103 +548,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("EFCUTY_ASP_2022231.Models.SiteUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("SiteUser");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "13dd7181-a74c-4baf-9574-85ab30a5f5e3",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c71f1b00-bf37-486f-8f49-88c2271e77e2",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "BELA.KOVACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHi5cyGEecM687CM6XXQ+rJY2hn8ingLVV/uykxE9nCezFnHazf5TyE8AY2Az6bnxw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "645f6aac-9a8b-4fbe-a150-a3e62d871df7",
-                            TwoFactorEnabled = false,
-                            UserName = "bela.kovacs@gmail.com",
-                            FirstName = "Béla",
-                            LastName = "Kovács"
-                        },
-                        new
-                        {
-                            Id = "cb2a61c1-3c9d-4b65-8f79-ccf91caa89a2",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "14fd4f0c-51fc-4851-8eee-2f4dccc3b265",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "JOZSEFKISS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELVzChkFXIXR1joIEFNMBw0GtXtPacDaDc22YB7uws0c8WVoeTSWsZWGCsMe25JZNA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "4cb254b8-1f4f-4ece-bef8-8f303a724090",
-                            TwoFactorEnabled = false,
-                            UserName = "jozsefkiss@gmail.com",
-                            FirstName = "József",
-                            LastName = "Kiss"
-                        },
-                        new
-                        {
-                            Id = "88e6c8ee-bd0d-4a15-9b90-21514eccae4f",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1680e943-4376-4958-a325-d18cc09d8035",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "ISTVANTAKACS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJVFbz3LzBPTbeLlS3AwGL8KQqHAJFGYJzSISm2EyL2IokA+ezcbZEuPa+CORWrL7w==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "2c7c3f69-9c6b-4913-ba69-37846ec87fa7",
-                            TwoFactorEnabled = false,
-                            UserName = "istvantakacs@gmail.com",
-                            FirstName = "Ferenc",
-                            LastName = "Kovács"
-                        },
-                        new
-                        {
-                            Id = "4487b2cc-2e4a-4494-b8eb-8a448701e371",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "9fa87289-094a-423f-ad1c-f82c3d3e6193",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "MARIANNKISS@UNI-OBUDA.HU",
-                            PasswordHash = "AQAAAAEAACcQAAAAENwjoctXHFwooobmNv+b+CMsF3QCnD1SL/tuRhrvqDobBDqfhJBCofu8sPwDWF77ow==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cfd46591-b288-4c49-b016-46cae7a38a9e",
-                            TwoFactorEnabled = false,
-                            UserName = "mariannkiss@uni-obuda.hu",
-                            FirstName = "Mariann",
-                            LastName = "Kiss"
-                        },
-                        new
-                        {
-                            Id = "3cc3ef7f-bc8e-461c-8271-4ac357cddd64",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "2b8d40af-2bee-4a7c-8b9d-c1c1ec010e8c",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "JULIAHORVATH@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI5PoDcqIb4uuhGUgE8Waeg5jXn4gW8ol+6DjVqfzB9zYC1ZV6Zxit+0wC1n982/iA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5874d0e-8a35-46de-9181-eb1d46527166",
-                            TwoFactorEnabled = false,
-                            UserName = "juliahorvath@yahoo.com",
-                            FirstName = "Júlia",
-                            LastName = "Horváth"
-                        });
                 });
 
             modelBuilder.Entity("EFCUTY_ASP_2022231.Models.Comment", b =>
@@ -575,7 +558,7 @@ namespace EFCUTY_ASP_2022231.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EFCUTY_ASP_2022231.Models.SiteUser", "Author")
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", "Author")
                         .WithMany()
                         .HasForeignKey("SiteUserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -588,7 +571,7 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             modelBuilder.Entity("EFCUTY_ASP_2022231.Models.Post", b =>
                 {
-                    b.HasOne("EFCUTY_ASP_2022231.Models.SiteUser", "Author")
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", "Author")
                         .WithMany()
                         .HasForeignKey("SiteUserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -616,7 +599,7 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -625,7 +608,7 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -640,7 +623,7 @@ namespace EFCUTY_ASP_2022231.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -649,7 +632,7 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("EFCUTY_ASP_2022231.Models.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

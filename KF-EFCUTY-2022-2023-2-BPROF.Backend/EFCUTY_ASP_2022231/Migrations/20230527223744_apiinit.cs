@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EFCUTY_ASP_2022231.Migrations
 {
-    public partial class final2 : Migration
+    public partial class apiinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,9 +28,8 @@ namespace EFCUTY_ASP_2022231.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -112,8 +111,8 @@ namespace EFCUTY_ASP_2022231.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -157,8 +156,8 @@ namespace EFCUTY_ASP_2022231.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -237,14 +236,14 @@ namespace EFCUTY_ASP_2022231.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "13dd7181-a74c-4baf-9574-85ab30a5f5e3", 0, "c71f1b00-bf37-486f-8f49-88c2271e77e2", "SiteUser", null, false, "Béla", "Kovács", false, null, null, "BELA.KOVACS@GMAIL.COM", "AQAAAAEAACcQAAAAEHi5cyGEecM687CM6XXQ+rJY2hn8ingLVV/uykxE9nCezFnHazf5TyE8AY2Az6bnxw==", null, false, "645f6aac-9a8b-4fbe-a150-a3e62d871df7", false, "bela.kovacs@gmail.com" },
-                    { "3cc3ef7f-bc8e-461c-8271-4ac357cddd64", 0, "2b8d40af-2bee-4a7c-8b9d-c1c1ec010e8c", "SiteUser", null, false, "Júlia", "Horváth", false, null, null, "JULIAHORVATH@YAHOO.COM", "AQAAAAEAACcQAAAAEI5PoDcqIb4uuhGUgE8Waeg5jXn4gW8ol+6DjVqfzB9zYC1ZV6Zxit+0wC1n982/iA==", null, false, "a5874d0e-8a35-46de-9181-eb1d46527166", false, "juliahorvath@yahoo.com" },
-                    { "4487b2cc-2e4a-4494-b8eb-8a448701e371", 0, "9fa87289-094a-423f-ad1c-f82c3d3e6193", "SiteUser", null, false, "Mariann", "Kiss", false, null, null, "MARIANNKISS@UNI-OBUDA.HU", "AQAAAAEAACcQAAAAENwjoctXHFwooobmNv+b+CMsF3QCnD1SL/tuRhrvqDobBDqfhJBCofu8sPwDWF77ow==", null, false, "cfd46591-b288-4c49-b016-46cae7a38a9e", false, "mariannkiss@uni-obuda.hu" },
-                    { "88e6c8ee-bd0d-4a15-9b90-21514eccae4f", 0, "1680e943-4376-4958-a325-d18cc09d8035", "SiteUser", null, false, "Ferenc", "Kovács", false, null, null, "ISTVANTAKACS@GMAIL.COM", "AQAAAAEAACcQAAAAEJVFbz3LzBPTbeLlS3AwGL8KQqHAJFGYJzSISm2EyL2IokA+ezcbZEuPa+CORWrL7w==", null, false, "2c7c3f69-9c6b-4913-ba69-37846ec87fa7", false, "istvantakacs@gmail.com" },
-                    { "cb2a61c1-3c9d-4b65-8f79-ccf91caa89a2", 0, "14fd4f0c-51fc-4851-8eee-2f4dccc3b265", "SiteUser", null, false, "József", "Kiss", false, null, null, "JOZSEFKISS@GMAIL.COM", "AQAAAAEAACcQAAAAELVzChkFXIXR1joIEFNMBw0GtXtPacDaDc22YB7uws0c8WVoeTSWsZWGCsMe25JZNA==", null, false, "4cb254b8-1f4f-4ece-bef8-8f303a724090", false, "jozsefkiss@gmail.com" }
+                    { "5aa3e82c-3e7b-4cc4-804e-1ea6f8922f8b", 0, "ec5c1f8d-392d-40d4-8663-5695c9ab1b78", null, false, "Ferenc", "Kovács", false, null, null, "ISTVANTAKACS@GMAIL.COM", "AQAAAAEAACcQAAAAEH09JHyfWPLnG7KHq3vX8oB2VlG+pZdfbFJJXtjY96RyDSwswPG3GcEAJcrurkH5WQ==", null, false, "c8696ec3-ca52-4627-b5db-ad2073dc6e99", false, "istvantakacs@gmail.com" },
+                    { "6656bbe9-66c7-4069-be44-a1e368d4669d", 0, "ab013e34-6d08-42e3-ae60-322b5a31f6a1", null, false, "Mariann", "Kiss", false, null, null, "MARIANNKISS@UNI-OBUDA.HU", "AQAAAAEAACcQAAAAEGluqJqm59iQwRkrH+pfQBvsmPbQhpjLnyDtdIdCKUpYq7ztNacc7MHvoApXOkjZjg==", null, false, "77895e66-afeb-4c3a-aa01-d4973e14f93a", false, "mariannkiss@uni-obuda.hu" },
+                    { "921df54a-d1ba-47fc-af44-8ac65b786883", 0, "997b8879-1b87-434c-99b9-9d04272e578c", null, false, "Júlia", "Horváth", false, null, null, "JULIAHORVATH@YAHOO.COM", "AQAAAAEAACcQAAAAEELg7hzSs98j7cxzdr+3FtIbZKBwD+j7/gfagqz3yHOzwFpUQDc9TvR4EfEkArLT4A==", null, false, "fd37a41d-0f5e-40a4-b701-efa54340188d", false, "juliahorvath@yahoo.com" },
+                    { "c22192a2-5083-40a1-af8e-fb652a0914bd", 0, "59485fe1-96b5-4239-a673-05c3d8a963f8", null, false, "Béla", "Kovács", false, null, null, "BELA.KOVACS@GMAIL.COM", "AQAAAAEAACcQAAAAEFO6jAjt/hxwUQxW1q3RpsvTCq27f4x470ikuCg6xdeXxGaIVvoi5D1ECuZmn15U2Q==", null, false, "0aace00b-b8d8-4983-9348-286e14dc5d89", false, "bela.kovacs@gmail.com" },
+                    { "f90bda35-d092-4bb8-84cd-a611aeab470a", 0, "21e99639-a160-4065-9adf-4be9630f39b1", null, false, "József", "Kiss", false, null, null, "JOZSEFKISS@GMAIL.COM", "AQAAAAEAACcQAAAAEPPqcEALuOKPBH0vbsxA9E+BAvzpq6jdUPy93tG5Urfa65vV2hDVmMH8esdG+QAB5A==", null, false, "98eed380-77a0-4425-871e-ea9f89a9dd07", false, "jozsefkiss@gmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -257,30 +256,6 @@ namespace EFCUTY_ASP_2022231.Migrations
                     { "NIXMN1HBNE", 7, true, "Analízis 1", 1 },
                     { "NIXSF1HBNE", 7, true, "Szoftvertervezés és -fejlesztés 1.", 1 },
                     { "NIXSF2HBNE", 7, true, "Szoftvertervezés és -fejlesztés 2.", 2 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Posts",
-                columns: new[] { "Id", "Content", "EditCount", "LastEdited", "SiteUserId", "SubjectCode", "Timestamp" },
-                values: new object[,]
-                {
-                    { "138c5159-e3e0-4f06-a118-81062f1f1f61", "Határérték-számításban tud valaki segíteni?", 0, null, "88e6c8ee-bd0d-4a15-9b90-21514eccae4f", "NIXMN1HBNE", new DateTime(2022, 9, 7, 7, 45, 28, 0, DateTimeKind.Unspecified) },
-                    { "31ed54bb-1fa5-430c-a965-06b65b7164ed", "Sziasztok! Tudtok valamit, hogy mi lesz a jövő heti zh-ban?", 0, null, "13dd7181-a74c-4baf-9574-85ab30a5f5e3", "KGK666BUKO", new DateTime(2022, 10, 23, 11, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "98d55237-599d-43e9-b3dd-33423c9344fc", "Kedves mindenki! Ugye tudják, hogy a zárthelyi dolgozatot kiválthatják beadandó dolgozat megírásával?\nDe akkor legfeljebb hármast tudok majd adni.", 0, null, "4487b2cc-2e4a-4494-b8eb-8a448701e371", "KGK666BUKO", new DateTime(2022, 10, 29, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "b59674e6-7b78-43ad-9c8e-7594be96410e", "Jövő héten lesz óra?", 0, null, "3cc3ef7f-bc8e-461c-8271-4ac357cddd64", "NIXBE1PBNE", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "dc78bd1e-80ce-4e0e-a03b-f91327b62378", "Hányat lehet hiányozni sztf laboron?", 0, null, "cb2a61c1-3c9d-4b65-8f79-ccf91caa89a2", "NIXMN1HBNE", new DateTime(2022, 10, 15, 11, 11, 22, 0, DateTimeKind.Unspecified) }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Comments",
-                columns: new[] { "Id", "Content", "EditCount", "LastEdited", "PostId", "SiteUserId", "Timestamp" },
-                values: new object[,]
-                {
-                    { "50590d26-0a29-4910-b985-3a322d343368", "Figyelj oda, hogy ez nem az sztf topik! Egyébként matekról meg progról is négy hiányzásnál letiltanak.", 0, null, "dc78bd1e-80ce-4e0e-a03b-f91327b62378", "13dd7181-a74c-4baf-9574-85ab30a5f5e3", new DateTime(2022, 10, 29, 8, 13, 28, 0, DateTimeKind.Unspecified) },
-                    { "5f777676-f965-4267-9460-672b76c0f215", "Mondjuk nem is volt olyan rossz, 69% lett a zh-m^^", 0, null, "138c5159-e3e0-4f06-a118-81062f1f1f61", "88e6c8ee-bd0d-4a15-9b90-21514eccae4f", new DateTime(2022, 10, 20, 21, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "6e392491-71d4-418d-97cd-0c3f561ef5f3", "Ne szívass, akkor meg mit problémáztál szeptemberben? Én mehetek pótzh-ra...", 0, null, "138c5159-e3e0-4f06-a118-81062f1f1f61", "3cc3ef7f-bc8e-461c-8271-4ac357cddd64", new DateTime(2022, 10, 22, 11, 5, 33, 0, DateTimeKind.Unspecified) },
-                    { "8b53c519-67f9-479e-881a-fae3704cbd60", "Nekem se megy, meg szerintem senkinek se, mindenkinek bukó lesz a zh:D", 0, null, "138c5159-e3e0-4f06-a118-81062f1f1f61", "3cc3ef7f-bc8e-461c-8271-4ac357cddd64", new DateTime(2022, 9, 10, 8, 15, 28, 0, DateTimeKind.Unspecified) },
-                    { "ba6e3191-6817-4fcf-90ef-5d5045df9fc4", "Ne felejtse el, hogy én is látom, ne tegezzen mindenkit csak úgy.\nEgyébként tesztes kérdések lesznek, Marshall-keresztet mindenképp nézzék át!", 0, null, "31ed54bb-1fa5-430c-a965-06b65b7164ed", "4487b2cc-2e4a-4494-b8eb-8a448701e371", new DateTime(2022, 10, 28, 8, 15, 28, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
