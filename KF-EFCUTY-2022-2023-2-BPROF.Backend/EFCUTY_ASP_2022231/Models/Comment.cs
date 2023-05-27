@@ -29,9 +29,9 @@ namespace EFCUTY_ASP_2022231.Models
         public string PostId { get; set; }
 
         [NotMapped]
-        public virtual SiteUser Author { get; set; }
+        public virtual ApiUser Author { get; set; }
 
-        [ForeignKey(nameof(SiteUser))]
+        [ForeignKey(nameof(ApiUser))]
         public string SiteUserId { get; set; }
     }
 }
