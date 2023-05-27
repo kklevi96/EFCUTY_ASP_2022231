@@ -3,11 +3,13 @@ using EFCUTY_ASP_2022231.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using EFCUTY_ASP_2022231.Repository;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = "Server=(localdb)\\mssqllocaldb;Database=aspnet-EFCUTY_ASP_2022231-B0C829E2-7F2E-44B5-85BF-7FE7180D6587;Trusted_Connection=True;MultipleActiveResultSets=true";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options
     .UseSqlServer(connectionString)
@@ -17,17 +19,28 @@ builder.Services.AddTransient<ISubjectsRepository, SubjectsRepository>();
 builder.Services.AddTransient<IPostsRepository, PostsRepository>();
 builder.Services.AddTransient<ICommentsRepository, CommentsRepository>();
 
-builder.Services.AddDefaultIdentity<SiteUser>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequireDigit = false;
-    options.Password.RequiredLength = 8;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
+//builder.Services.AddDefaultIdentity<SiteUser>(options =>
+//{
+//    options.SignIn.RequireConfirmedAccount = false;
+//    options.Password.RequireDigit = false;
+//    options.Password.RequiredLength = 8;
+//    options.Password.RequireNonAlphanumeric = false;
+//    options.Password.RequireUppercase = false;
 
+//})
+//    .AddRoles<IdentityRole>()
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddIdentity<ApiUser, IdentityRole>(option =>
+{
+    option.SignIn.RequireConfirmedAccount = false;
+    option.Password.RequireDigit = false;
+    option.Password.RequiredLength = 8;
+    option.Password.RequireNonAlphanumeric = false;
+    option.Password.RequireUppercase = false;
 })
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication().AddFacebook(opt =>
 {
