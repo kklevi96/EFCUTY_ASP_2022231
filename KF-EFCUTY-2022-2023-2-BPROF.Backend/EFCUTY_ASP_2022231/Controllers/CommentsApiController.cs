@@ -13,9 +13,9 @@ namespace EFCUTY_ASP_2022231.Controllers
     {
         private readonly ICommentsRepository repository;
         private readonly IPostsRepository postsRepository;
-        private readonly UserManager<SiteUser> userManager;
+        private readonly UserManager<ApiUser> userManager;
 
-        public CommentsApiController(ICommentsRepository repository, UserManager<SiteUser> userManager, IPostsRepository postsRepository)
+        public CommentsApiController(ICommentsRepository repository, UserManager<ApiUser> userManager, IPostsRepository postsRepository)
         {
             this.repository = repository;
             this.userManager = userManager;
@@ -23,22 +23,16 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Comments
-        public IActionResult Index(string postId)
+        public IActionResult Index()
         {
-            var vm = new CommentsViewModel(postsRepository.GetOne(postId))
-            {
-                Comments = this.repository.GetAll()
-                .Where(c => c.PostId == postId)
-                .OrderBy(c => c.Timestamp)
-            };
-            return Ok(vm);
+            return Ok(this.repository.GetAll());
 
         }
 
         // POST: Comments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("Create")]
         public IActionResult Create(Comment comment)
         {
             if (ModelState.IsValid)
@@ -59,8 +53,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         // POST: Comments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [Authorize]
+        [HttpPut("Edit/{id}")]
         public IActionResult Edit(string id, Comment comment)
         {
             var c = this.repository.GetOne(id);
@@ -84,7 +77,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         }
 
         // GET: Comments/Delete/5
-        [Authorize]
+        [HttpDelete("Delete")]
         public IActionResult Delete(string id)
         {
             var comment = this.repository.GetOne(id);
