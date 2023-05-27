@@ -11,9 +11,9 @@ namespace EFCUTY_ASP_2022231.Controllers
     public class SubjectsApiController : ControllerBase
     {
         private readonly ISubjectsRepository repository;
-        private readonly UserManager<SiteUser> userManager;
+        private readonly UserManager<ApiUser> userManager;
 
-        public SubjectsApiController(ISubjectsRepository repository, UserManager<SiteUser> userManager)
+        public SubjectsApiController(ISubjectsRepository repository, UserManager<ApiUser> userManager)
         {
             this.repository = repository;
             this.userManager = userManager;
@@ -69,7 +69,7 @@ namespace EFCUTY_ASP_2022231.Controllers
         // POST: Subjects/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost("Edit/{id}")]
+        [HttpPut("Edit/{id}")]
         public IActionResult Edit(string id, Subject subject)
         {
             if (!String.IsNullOrEmpty(subject.Name))
