@@ -48,7 +48,9 @@ namespace EFCUTY_ASP_2022231.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<IdentityRole>().HasData(
-                new { Id = "1", Name = "Admin", NormalizedName = "ADMIN" }
+                new { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
+                new { Id = "2", Name = "User", NormalizedName = "USER" }
+
             );
 
             var hasher = new PasswordHasher<ApiUser>();
