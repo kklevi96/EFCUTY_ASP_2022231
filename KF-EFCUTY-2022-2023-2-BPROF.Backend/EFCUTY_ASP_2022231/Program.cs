@@ -20,9 +20,7 @@ builder.Services.AddTransient<ISubjectsRepository, SubjectsRepository>();
 builder.Services.AddTransient<IPostsRepository, PostsRepository>();
 builder.Services.AddTransient<ICommentsRepository, CommentsRepository>();
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 //builder.Services.AddDefaultIdentity<SiteUser>(options =>
 //{
