@@ -46,12 +46,6 @@ builder.Services.AddIdentity<ApiUser, IdentityRole>(option =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-builder.Services.AddAuthentication().AddFacebook(opt =>
-{
-    opt.AppId = "399971805603613";
-    opt.AppSecret = "22aea2df6af2c47164f053b7e5fa1b7e";
-});
-
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddCors(options =>
