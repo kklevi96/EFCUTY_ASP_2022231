@@ -22,6 +22,7 @@ namespace EFCUTY_ASP_2022231.Controllers
 
 
         // GET: Subjects
+        [Authorize]
         [HttpGet]
         public IActionResult Index()
         {
